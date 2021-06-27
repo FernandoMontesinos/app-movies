@@ -1,0 +1,17 @@
+export default class Carrusel {
+    constructor() {
+        this.carruselCont = document.querySelectorAll(".carousel-info");
+        this.template = document.querySelector(".carousel-template").content;
+        this.fragment = new DocumentFragment();
+
+    }
+
+    mostrarTextoCarrusel() {
+        this.carruselCont.forEach((img) => {
+            this.clone = this.template.cloneNode(true);
+            this.fragment.appendChild(this.clone);
+            img.appendChild(this.fragment);
+        })
+    }
+    
+}
